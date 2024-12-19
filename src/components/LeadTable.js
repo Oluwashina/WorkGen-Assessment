@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import copilot_icon from '../app/assets/copilot.svg'
 
 export default function LeadTable() {
   const leads = [
@@ -16,7 +18,17 @@ export default function LeadTable() {
     <div className='bg-white shadow rounded'>
     {/* generate an input search */}
      <div className='py-4 px-3'>
-        <input type="text" placeholder="Sort filter and search with Copilot" className="border-2 border-gray-300 text-sm rounded-md px-3 py-3 min-w-[450px]" />
+        <div className='relative w-[450px]'>
+         <input type="text" placeholder="Sort filter and search with Copilot" className="border-2 placeholder:text-gray-500 border-gray-300 text-sm w-full rounded-md px-3 py-3" />
+            <div className='absolute top-1/2 transform -translate-y-1/2 right-4'>
+            <Image
+                src={copilot_icon}
+                alt="search_icon"
+                className="w-[18px] h-[18px] "
+            />
+            </div>
+        </div>
+       
      </div>
 
 
