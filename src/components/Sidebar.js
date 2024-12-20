@@ -171,7 +171,7 @@ export default function Sidebar() {
              {/* Dashbaords Link */}
              <li className="p-2 flex gap-2 items-center hover:bg-[#FFFFFF] text-sm cursor-pointer">
               <HomeOutlined className={` text-[#4B4E68] `} style={{ fontSize: "20px" }} />
-              Dashbaords
+              Dashboards
             </li>
              {/* Activities Link */}
              <li className="p-2 flex gap-2 items-center hover:bg-[#FFFFFF] text-sm cursor-pointer">

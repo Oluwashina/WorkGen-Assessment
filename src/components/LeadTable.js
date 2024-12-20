@@ -1,8 +1,21 @@
-import React from 'react';
+"use client"
+import React,{useState} from 'react';
 import Image from 'next/image';
 import copilot_icon from '../app/assets/copilot.svg'
+import {
+    KeyboardArrowDown,
+    ArrowDownward,
+    ArrowUpward
+   } from '@mui/icons-material';
 
 export default function LeadTable() {
+
+    const [sortOrder, setSortOrder] = useState("asc");
+
+  const toggleSortOrder = () => {
+    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+  };
+
   const leads = [
     { name: 'Winford Asher', topic: 'Cafe A100 for commercial use', status: 'New', created: '4/2/2024' },
     { name: 'Josia Love', topic: 'Upgrading service plan', status: 'New', created: '3/30/2024' },
@@ -35,10 +48,34 @@ export default function LeadTable() {
      <table className="w-full mt-4">
       <thead>
         <tr className="text-left border-b border-gray-100">
-          <th className="p-4 text-sm">Name</th>
-          <th className="p-4 text-sm">Topic</th>
-          <th className="p-4 text-sm">Status reason</th>
-          <th className="p-4 text-sm">Created On</th>
+          <th className="p-4 text-sm">
+          <div className='flex gap-1 items-center'>
+            Name <KeyboardArrowDown  className={` text-gray-500] `} style={{ fontSize: "18px" }} />
+            </div>
+          </th>
+          <th className="p-4 text-sm">
+            <div className='flex gap-1 items-center'>
+            Topic <KeyboardArrowDown  className={` text-gray-500 `} style={{ fontSize: "18px" }} />
+            </div>
+          </th>
+          <th className="p-4 text-sm">
+            <div className='flex gap-1 items-center'>
+            Status reason <KeyboardArrowDown  className={` text-gray-500 `} style={{ fontSize: "18px" }} />
+            </div>
+          </th>
+          <th
+            className="p-4 text-sm cursor-pointer"
+            onClick={toggleSortOrder}
+          >
+            <div className='flex gap-1 items-center'>
+             Created on{" "}
+                {sortOrder === "asc"? (
+                <ArrowUpward className={` text-gray-500 `} style={{ fontSize: "16px" }} />
+                ) : (
+                <ArrowDownward className={` text-gray-500 `} style={{ fontSize: "16px" }} />
+                )}
+            </div>           
+          </th>
         </tr>
       </thead>
       <tbody>
