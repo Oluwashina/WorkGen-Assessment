@@ -140,7 +140,7 @@ export default function Sidebar() {
       
       </div>
 
-      <div className="flex items-center space-x-2 mt-4">
+      <div className="flex flex-col md:flex-row md:items-center space-x-2 mt-4">
             <div className="flex flex-grow flex-wrap items-center border border-gray-300 rounded-md p-2">
               {/* Render Chips */}
               {chips.map((chip, index) => (
@@ -168,7 +168,7 @@ export default function Sidebar() {
                 className=" focus:outline-none text-sm text-gray-700"
               />
              </div>
-          <button className="bg-blue-600 text-white px-4 py-3 whitespace-nowrap rounded-md text-sm">
+          <button className="bg-blue-600 mt-3 md:mt-0 text-white px-4 py-3 whitespace-nowrap rounded-md text-sm">
             Allow access
           </button>
         </div>
@@ -184,8 +184,8 @@ export default function Sidebar() {
       </div>
     </div>
       </ModalComponent>
-
-    <div className="w-48 flex-shrink-0 bg-[#E8E8E8] border-r py-2 border-[#D8D8D8] flex flex-col">
+      
+    <div className="w-48 hidden flex-shrink-0 bg-[#E8E8E8] border-r py-2 border-[#D8D8D8] md:flex flex-col">
       <div className='px-2'>
         <Menu className={` text-[#4B4E68] `} style={{ fontSize: "20px" }} />
       </div>

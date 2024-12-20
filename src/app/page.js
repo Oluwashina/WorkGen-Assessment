@@ -18,7 +18,8 @@ import {
   Lock,
   Storage,
   ThumbUpAltOutlined,
-  ThumbDownAltOutlined
+  ThumbDownAltOutlined,
+  Menu
  } from '@mui/icons-material';
  import copilot_icon from '../app/assets/copilot.svg'
  import rank_icon from '../app/assets/ranking-green.svg'
@@ -62,13 +63,13 @@ export default function Home() {
             </div>
 
                {/* Content */}
-               <div className="mt-4 bg-[#EBF3FF] p-3 rounded-md flex justify-between items-center">
+               <div className="mt-4 bg-[#EBF3FF] p-3 rounded-md flex-col md:flex-row flex justify-between md:items-center">
                 <p className="text-sm text-[#6948bc]">
                   Jane may be interested in upgrading espresso machines for her in-store
                   coffee shops.
               </p>
              
-             <div className="flex space-x-2">
+             <div className="flex space-x-2 mt-3 md:mt-0">
                 <button className="px-4 py-2 text-xs bg-white border border-gray-200  rounded-md">
                   Edit
                 </button>
@@ -125,7 +126,7 @@ export default function Home() {
                 </ul>
 
                 {/* Metrics */}
-                <div className="mt-4 flex gap-4">
+                <div className="mt-4 flex flex-col md:flex-row gap-4">
                   <div className="shadow rounded-lg bg-white py-4 px-3 min-w-[220px]">
                     <div className='flex gap-3 items-center'>
                       <div>
@@ -165,7 +166,7 @@ export default function Home() {
                 </div>
                 </div>
 
-                <div className="flex mt-4 items-center gap-3 p-4">
+                <div className="flex flex-col md:flex-row  mt-4 md:items-center gap-3 p-4">
                   {/* Lock Icon and Number */}
                   <div className="flex items-center justify-center p-1 border border-gray-100 bg-gray-50 rounded">
                     <Lock className="text-yellow-500"  style={{ fontSize: "16px" }} /> {/* Replace with your icon */}
@@ -184,7 +185,7 @@ export default function Home() {
                   </div>
 
                   {/* AI-Generated Content Note */}
-                  <div className='ml-auto flex gap-3 items-center'>
+                  <div className='md:ml-auto flex gap-3 items-center'>
                     <div className="text-xs text-gray-600 p-2 bg-gray-50 rounded">
                       AI-generated content may be incorrect
                     </div>
@@ -242,8 +243,13 @@ export default function Home() {
 
         </ModalComponent>
 
-        <Layout>     
-            <div className="flex items-center justify-between bg-white px-3 py-2 shadow-sm border-b">
+        <Layout>  
+
+           <div className='mb-3 block md:hidden'>
+                  <Menu className={` text-[#4B4E68] `} style={{ fontSize: "20px" }} />
+              </div>
+
+            <div className="md:flex items-center md:justify-between bg-white px-3 py-2 shadow-sm w-full">
               {/* Dropdown */}
               <div className="relative">
                 <button
@@ -265,7 +271,7 @@ export default function Home() {
               </div>
 
                 {/* Icons and Buttons */}
-                <div className="flex items-center space-x-4">
+                <div className="hidden md:flex items-center space-x-4">
                   <button className="flex items-center text-gray-600 hover:text-gray-900">
                    <Assessment className={` text-[#4B4E68] `} style={{ fontSize: "18px" }} />
                     <span className="ml-1 text-xs">Show chart</span>
@@ -314,13 +320,13 @@ export default function Home() {
             </div>
 
             <div className="relative bg-gradient-to-r mt-4 from-blue-400 via-blue-300 to-purple-400 rounded-lg p-[1px]">
-               <div className="bg-white relative rounded-lg shadow p-5 hover:shadow-xl">
-              <div className='flex gap-2 items-center'>
+               <div className="bg-white relative rounded-lg shadow p-4 md:p-5 hover:shadow-xl">
+              <div className='flex gap-2 md:items-center'>
                 <Image src={copilot_icon}
                   alt="copilot"
                 className="w-[25px] h-[25px]"
                  />
-                <h1 className="text-lg font-semibold">
+                <h1 className="text-sm md:text-lg font-semibold">
                   Hi Mona,{" "}
                   <span className="text-[#3c40b5] font-bold">68%</span> of goal achieved
                   and rest can be achieved by focusing on 20 top leads.
@@ -329,16 +335,16 @@ export default function Home() {
               
                
 
-              <div className='flex gap-4 mt-5'>
-                <div className='basis-[70%]'>
+              <div className='flex flex-col md:flex-row gap-4 mt-3 md:mt-5'>
+                <div className='basis-full md:basis-[70%]'>
                   <div className=''>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 text-xs md:text-sm">
                       Copilot has pinpointed 20 key leads that show strong purchase intent
                       and are actively engaging. These leads need your focus.
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 mt-4">
+                  <div className="grid md:grid-cols-2 gap-4 mt-4">
                       {/* Lead Cards */}
                     <div className="bg-white shadow h-fit rounded-lg p-4">
                         <div className='flex gap-2 items-center'>
@@ -363,7 +369,7 @@ export default function Home() {
                         className='mt-2 bg-[#F4F5FE] py-4 px-2 rounded-lg cursor-pointer'>
                             <div className='flex gap-2 items-center'>
                                     <MessageTwoTone className={` text-[#4B4E68] `} style={{ fontSize: "20px" }} />
-                                    <p className='text-sm text-[#0e0e0f] font-medium'>Engage with Jane Reyes</p>
+                                    <p className='text-[13px] md:text-sm text-[#0e0e0f] font-medium'>Engage with Jane Reyes</p>
                             </div>
                             <div className='mt-2'>
                               <p className='text-xs text-[#7d7f83]'>Jane may be very interested in upgrading espresso machines for her in-store coffee shops</p>
@@ -371,9 +377,9 @@ export default function Home() {
                         </div>
 
                           <div className='flex mt-2 gap-1'>
-                              <p className='text-sm text-[#8f9191]'>Expand business</p>
+                              <p className='text-xs md:text-sm text-[#8f9191]'>Expand business</p>
                               <div className='text-[#a0a4a4]'>*</div>
-                              <p className='text-sm text-[#8f9191]'>High buying intent</p>
+                              <p className='text-xs md:text-sm text-[#8f9191]'>High buying intent</p>
                             </div>
                       
                     </div>
@@ -398,7 +404,7 @@ export default function Home() {
                         <div className='mt-2 bg-[#F4F5FE] py-4 px-2 rounded-lg'>
                             <div className='flex gap-2 items-center'>
                                     <MessageTwoTone className={` text-[#4B4E68] `} style={{ fontSize: "20px" }} />
-                                    <p className='text-sm text-[#0e0e0f] font-medium'>Prepare for meeting with Alan</p>
+                                    <p className='text-[13px] md:text-sm text-[#0e0e0f] font-medium'>Prepare for meeting with Alan</p>
                             </div>
                             <div className='mt-2'>
                               <p className='text-xs text-[#7d7f83]'>Prepare for high-buying intent meeting Copilot scheduled for 2 PM regardingupgrading service contract</p>
@@ -406,9 +412,9 @@ export default function Home() {
                         </div>
 
                         <div className='flex mt-2 gap-1'>
-                              <p className='text-sm text-[#8f9191]'>Upcoming meeting</p>
+                              <p className='text-xs md:text-sm text-[#8f9191]'>Upcoming meeting</p>
                               <div className='text-[#a0a4a4]'>*</div>
-                              <p className='text-sm text-[#8f9191]'>Due today</p>
+                              <p className='text-xs md:text-sm text-[#8f9191]'>Due today</p>
                             </div>
                       
                     </div>

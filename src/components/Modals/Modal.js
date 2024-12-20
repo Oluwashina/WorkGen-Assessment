@@ -31,11 +31,11 @@ const ModalComponent = ({onClose,isOpen,title, children}) => {
                 >
                 <div
                     onClick={(e) => e.stopPropagation()} 
-                    className="relative p-8 w-full max-w-5xl h-full md:h-auto mx-auto my-32 modal-content translate-y-[-200px] transition-all duration-[0.3s]"
+                    className="relative p-4 md:p-8 w-full max-w-5xl h-full md:h-auto mx-auto my-32 modal-content translate-y-[-200px] transition-all duration-[0.3s]"
                 >
                     {/* modal content */}
                     <div className="relative bg-gradient-to-r mt-4 from-blue-400 via-blue-300 to-purple-400 rounded-lg p-[1px]">
-                        <div className="relative bg-white rounded-lg py-6 px-8">
+                        <div className="relative bg-white rounded-lg py-6 px-4 md:px-8">
                             {/* modal header */}
                             <div className="flex justify-between items-start">
                                 <div className='flex gap-2 items-center'>
