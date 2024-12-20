@@ -21,6 +21,7 @@ import {
   ThumbDownAltOutlined
  } from '@mui/icons-material';
  import copilot_icon from '../app/assets/copilot.svg'
+ import rank_icon from '../app/assets/ranking-green.svg'
  import linkedin_icon from '../app/assets/LinkedIn_icon.svg'
 import LeadTable from '@/components/LeadTable';
 import ModalComponent from '@/components/Modals/Modal';
@@ -125,17 +126,41 @@ export default function Home() {
 
                 {/* Metrics */}
                 <div className="mt-4 flex gap-4">
-                  <div className="shadow rounded-lg bg-white py-3 px-2 w-48">
-                  <p className="text-gray-500 text-sm">Decision Maker</p>
-                    <p className="text-sm font-semibold">Yes</p>
+                  <div className="shadow rounded-lg bg-white py-4 px-3 min-w-[220px]">
+                    <div className='flex gap-3 items-center'>
+                      <div>
+                        <Image src={rank_icon} alt="rank" width={40} height={40} />
+                      </div>
+                      <div>
+                      <p className="text-gray-500 text-sm">Decision Maker</p>
+                      <p className="text-sm font-semibold">Yes</p>
+                      </div>
+                    </div>
+     
                   </div>
-                  <div className="shadow rounded-lg bg-white py-3 px-2 w-48">
-                     <p className="text-gray-500 text-sm">Potential Deal Value</p>
-                    <p className="text-sm font-semibold">$1M</p>
+                  <div className="shadow rounded-lg bg-white py-4 px-3 min-w-[220px]">
+                     <div className='flex gap-3 items-center'>
+                      <div>
+                        <Image src={rank_icon} alt="rank" width={40} height={40} />
+                      </div>
+                      <div>
+                      <p className="text-gray-500 text-sm">Potential Deal Value</p>
+                      <p className="text-sm font-semibold">$1M</p>
+                      </div>
+                    </div>
+                  
                   </div>
-                  <div className="shadow rounded-lg bg-white py-3 px-2 w-48">
-                    <p className="text-gray-500 text-sm">Intent</p>
-                    <p className="text-sm font-semibold">High</p>
+                  <div className="shadow rounded-lg bg-white py-4 px-3 min-w-[220px]">
+                  <div className='flex gap-3 items-center'>
+                      <div>
+                        <Image src={rank_icon} alt="rank" width={40} height={40} />
+                      </div>
+                      <div>
+                      <p className="text-gray-500 text-sm">Intent</p>
+                      <p className="text-sm font-semibold">High</p>
+                      </div>
+                    </div>
+                 
                   </div>
                 </div>
                 </div>
@@ -169,10 +194,7 @@ export default function Home() {
                   
                 </div>
 
-
               </div>
-
-         
 
             {/* About Section */}
             <div className="mt-6 p-4 bg-white shadow border rounded-lg">
@@ -188,6 +210,34 @@ export default function Home() {
                 service.
               </p>
             </div>
+
+              <div className="flex mt-5 items-center justify-between w-full">
+                {/* Left Section: Showing X of Y */}
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <span>Showing 1 of 9</span>
+                  <span className="text-gray-400">|</span>
+                  <a href="#" className="text-blue-600 font-semibold  hover:underline">
+                    Show all
+                  </a>
+                </div>
+
+                {/* Center Section: Progress Bar */}
+                <div className='flex gap-1'>
+                    <div className='rounded-sm bg-blue-600 w-6 h-1 cursor-pointer'></div>
+                    <div className='rounded-sm bg-[#a0a4a4] w-1 h-1 cursor-pointer'></div>
+                    <div className='rounded-sm bg-[#a0a4a4] w-1 h-1 cursor-pointer'></div>
+                    <div className='rounded-sm bg-[#a0a4a4] w-1 h-1 cursor-pointer'></div>
+                  </div>
+
+                {/* Right Section: Thumbs-Up and Thumbs-Down */}
+                <div className="flex items-center gap-4 text-gray-500">
+                <ThumbUpAltOutlined className="text-gray-500" style={{ fontSize: "16px" }} />
+                <ThumbDownAltOutlined className="text-gray-500" style={{ fontSize: "16px" }} />
+                </div>
+              </div>
+
+
+
           </div>
 
         </ModalComponent>

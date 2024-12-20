@@ -4,6 +4,8 @@ import {
  MessageOutlined
 } from '@mui/icons-material';
 import {CSSTransition} from 'react-transition-group'
+import Image from 'next/image';
+import sms_icon from '../../app/assets//sms-green.svg'
 import './modal.css'
 
 
@@ -37,7 +39,7 @@ const ModalComponent = ({onClose,isOpen,title, children}) => {
                             {/* modal header */}
                             <div className="flex justify-between items-start">
                                 <div className='flex gap-2 items-center'>
-                                {title &&  <MessageOutlined className={` text-[#4B4E68] `} style={{ fontSize: "20px" }} />}
+                                {title &&  <Image src={sms_icon} width={20} alt="sms" height={20} />}
                                     <h3 className="text-base text-[#000]">
                                         {title}
                                     </h3>
